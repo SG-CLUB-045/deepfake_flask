@@ -246,8 +246,22 @@ def DetectPage():
         confidence = prediction[1]
         data = {'output': output, 'confidence': confidence}
         data = json.dumps(data)
-        os.remove(video_path);
+        os.remove(video_path)
         return render_template('trial.html', data=data)
-        
 
-app.run(port=3000, debug=True);
+@app.route('/apiupload', methods=['POST'])
+def upload_file():
+    if 'file' not in request.files:
+        return jsonify({"error": "No file part"}), 400
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({"error": "No selected file"}), 400
+    if file:
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+        result = detectFakeVideo("Uploaded_Files/" + file.filename)
+        print("Uploaded_Files/" + file.filename)
+        print(result)
+        return jsonify({"success": True, "filename": file.filename, "deepfake": result[0]}), 201
+        
+if __name__ == '__main__':
+  app.run(host='0.0.0.0',port=3000, debug=True)
