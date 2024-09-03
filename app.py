@@ -204,10 +204,28 @@ def detectFakeVideo(videoPath):
 
 @app.route('/', methods=['POST', 'GET'])
 def homepage():
-  if request.method == 'GET':
-	  return render_template('index.html')
-  # return render_template('index.html')
+	return render_template('index.html')
 
+@app.route('/api', methods=['POST'])
+def returnpredict():  
+  video = request.files['video']
+  print(video.filename)
+  video_filename = secure_filename(video.filename)
+  video.save(os.path.join(app.config['UPLOAD_FOLDER'], video_filename))
+  video_path = "Uploaded_Files/" + video_filename
+  prediction = detectFakeVideo(video_path)
+  if prediction[0] == 0:
+    output = "FAKE"
+  else:
+    output = "REAL"
+  confidence = prediction[1]
+  data = {'output': output, 'confidence': confidence}
+  data = json.dumps(data)
+  #  d={}
+  #  inputvideo=str(request.files['query'])
+  #  prediction = detectFakeVideo(inputvideo)
+  #  d['output'] = prediction
+  return data
 
 @app.route('/Detect', methods=['POST', 'GET'])
 def DetectPage():
@@ -229,7 +247,7 @@ def DetectPage():
         data = {'output': output, 'confidence': confidence}
         data = json.dumps(data)
         os.remove(video_path);
-        return render_template('index.html', data=data)
+        return render_template('trial.html', data=data)
         
 
-app.run(port=3000);
+app.run(port=3000, debug=True);
