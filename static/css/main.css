@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    flex-wrap: wrap;
+    width: 100vw;
+    overflow-x: hidden;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    overflow-x: none;
+    height: 60px;
+    width: 100vw;
+    align-items: center;
+    background: -webkit-linear-gradient(to right, #fc5c7d, #6a82fb);
+    background: linear-gradient(to right, #fc5c7d, #6a82fb); 
+}
+nav ul{
+    display:flex;
+    justify-content: center;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 35px;
+}
+nav .left{
+    font-size: 2rem;
+    margin-left: 50px;
+    font-weight: 900;
+    color: beige;
+}
+.right{
+    font-size: 1.4rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.first{
+    width: 100vw;
+    display: flex;
+}
+
+section .left{
+    width: 40%;
+    border: 2px solid white;
+    border-radius: 20px;
+    height: 650px;
+    margin: 150px 80px;
+    padding: 60px;
+    color: beige;
+}
+section .right{
+    width: 40%;
+    display: flex;
+    margin-left: 40px;
+}
+
+.img1{
+    height: 200px;
+    position: relative;
+    top: 100px;
+}
+
+.img2{
+    height: 200px;
+    position: relative;
+    top: 220px;
+    right: 150px;
+}
+.img3{
+    height: 200px;
+    position: relative;
+    top: 400px;
+    right: 780px;
+}
+.img4{
+    height: 200px;
+    position: relative;
+    top: 500px;
+    right: 870px;
+}
+.first h1{
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+.first p{
+    font-size: 20px;
+}
+.first h2{
+    font-size: 2rem;
+    margin: 25px 0;
+}
+.first button{
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    margin: 20px 120px;
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
+    background-color: aquamarine;
+}
+#check-btn{
+    width: 170px;
+    margin-right: 150px;
+}
+#reg-btn{
+    width: 170px;
+}
+/* .second{
+    height: 240px;
+}
+.second .box{
+    color: blanchedalmond;
+    display: flex;
+    justify-content: space-around;
+}
+.vertical-title{
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+.vertical-desc{
+    position: relative;
+    width: 200px;
+    font-size: 16px;
+} */
+
+
+
+
+

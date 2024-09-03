@@ -1,14 +1,84 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/util.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="d-grid" id="container">
+        <button onclick="pop_up()">Test</button>
+    </div>
+
+    <div class="p-fixed d-grid cover" id="cover" onclick="pop_up()"></div>
+
+    <div class="p-fixed d-flex jc-center br-20 cover" id="pop-up">
+        <p>Test Your File</p>
+        <input type="file" name="video" id="video" accept="video/mp4">
+        <button onclick="detectFile()">Test This File</button>
+    </div>
+
+
+
+    <script src="./static/js/script.js"></script>
+</body>
+
+</html> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Deepfake Detector</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/main.css">
 </head>
 <body>
-    <h1>Upload Video for Deepfake Detection</h1>
-    <form method="POST" action="/Detect" enctype="multipart/form-data">
-        <input type="file" name="video">
-        <button type="submit">Upload</button>
-    </form>
+    <header>
+        <nav>
+            <div class="left">DEEPFAKE DETECTOR</div>
+            <div class="right">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/ourmodel">Our Model</a></li>
+                    <li><a href="/aboutus">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="first">
+            <div class="left">
+                <!-- <h1>Next generation digital banking and investment</h1> -->
+                <h1>Next generation deepfake face swap detection</h1>
+                <p> Detection solutions extend for the visual media. Our Deepfake Detection model work on the RNN And LSTM Model that ensure better detection than Existing Ones And With More Accuracy.</p>
+                <h2>Why Choose Us?</h2>
+                <p>We leverage face swap detection into next level, such that you can detect the deepfake as well as report them directly to cyber cells also you can use our solution as extension that helps you to identify the deepfake while surfing on the web.
+                Also as our solution is cross platform you can access our service across any device and any platform.
+                </p>
+                <button id="check-btn"><a href="/check">Check Video</a></button>
+            </div>
+            <div class="right">
+                <img src="/static/images/img1.jpeg" alt="" class="img1">
+                <img src="/static/images/img2.jpeg" alt="" class="img2">
+                <img src="/static/images/img3.jpeg" alt="" class="img3">
+                <img src="/static/images/img4.jpeg" alt="" class="img4">
+            </div>
+        </section>
+
+    </main>
+
 </body>
 </html>
