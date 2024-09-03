@@ -1,0 +1,38 @@
+#container {
+    height: 100vh;
+    background: var(--dark);
+}
+
+.cover {
+    opacity: 0;
+    pointer-events: none;
+    
+    transition: .25s ease-in-out;
+}
+
+#cover {
+    top: 0; left: 0;
+    
+    height: 100vh;
+    width: 100vw;
+
+    z-index: 10;
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#pop-up {
+    top: 50%; left: 50%;
+    flex-direction: column;
+
+    width: 60vw;
+    height: 70vh;
+    
+    background: var(--dark2);
+
+    transform: translate(-50%, -50%);
+    z-index: 1500;
+}
