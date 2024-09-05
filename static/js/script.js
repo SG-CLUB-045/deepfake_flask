@@ -37,7 +37,8 @@ const testForFile = file => {
     })
     .then(res => res.json())
     .then(data => {
-        
+        const dataElem = document.getElementById("return-data");
+        dataElem.innerHTML = data;
     })
     .finally(() => {
         loader.classList.add("hidden");
