@@ -142,7 +142,7 @@ header {
     height: 280px;
 }
 
-#action-btn {
+#action-btn, #another-btn {
     padding: 8px 12px;
 
     font-size: .85em;
@@ -152,7 +152,6 @@ header {
 #loader-holder {
     z-index: 20;
 }
-
 
 #loader {
     width: 80px;
