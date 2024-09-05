@@ -49,14 +49,17 @@
 
     <section class="p-fixed d-flex jc-center cover hidden pop-up" id="pop-up">
         <div class="d-grid" id="pop-up-container">
-            <p>Upload Your File</p>
+            <p class="head-text">Upload Your File</p>
 
-            <video id="display" height="0"></video>
+            <video id="display" height="0" loop></video>
             
             <input type="file" class="d-none" id="video" name="video" accept="video/*, image/*" onchange="changeAction()">
             <p id="fileName"></p>
 
-            <p class="return-data"></p>
+            <div>
+                <p class="d-none" id="output">Result: </p>
+                <p class="d-none" id="confidence">Accuracy: </p>
+            </div>
             
             <div class="btn-box">
                 <label class="btn bg-blue" for="video" id="action-btn">Select</label>

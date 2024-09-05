@@ -7,6 +7,8 @@ const closeAll = () => {
     setTimeout(() => {
         fileName.textContent = '';
         display.classList.remove("display-show");
+        actionBtn.innerHTML = "Select";
+        actionBtn.htmlFor = "video";
     }, 200);
 }
 
@@ -32,14 +34,15 @@ const testForFile = file => {
 
     loader.classList.remove("hidden");
     
-    let result = fetch('/api', {
+    fetch('/api', {
         method: 'POST', body: data
     })
     .then(res => res.json())
     .then(data => {
-        const dataElem = document.getElementById("return-data");
-        dataElem.innerHTML = data;
-        actionBtn.innerHTML = "Select";
+        ["output", "confidence"].forEach(e => {
+            const elem = document.getElementById(e);
+            elem.innerHTML += data[e]; elem.classList.remove("d-none");
+        });
     })
     .finally(() => {
         loader.classList.add("hidden");

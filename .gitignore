@@ -2,3 +2,6 @@ venv/
 uploads/
 model/
 Uploaded_Files/
+templates/temp.html
+static/css/temp.css
+static/js/temp.js

@@ -143,6 +143,9 @@ header {
 }
 
 #action-btn {
+    padding: 8px 12px;
+    
+    font-size: .85em;
     cursor: pointer;
 }
 
