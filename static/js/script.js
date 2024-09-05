@@ -39,6 +39,7 @@ const testForFile = file => {
     .then(data => {
         const dataElem = document.getElementById("return-data");
         dataElem.innerHTML = data;
+        actionBtn.innerHTML = "Select";
     })
     .finally(() => {
         loader.classList.add("hidden");
