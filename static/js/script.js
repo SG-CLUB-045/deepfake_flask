@@ -8,6 +8,10 @@ const closeAll = () => {
         fileName.textContent = '';
 
         displays.forEach(e => e.classList.remove("display-show"));
+
+        ["output", "confidence"].forEach(e => {
+            document.getElementById(e).classList.add("d-none");
+        });
         
         actionBtn.innerHTML = "Select";
         actionBtn.htmlFor = "video";
@@ -48,7 +52,7 @@ const testForFile = file => {
     .then(data => {
         ["output", "confidence"].forEach(e => {
             const elem = document.getElementById(e);
-            elem.innerHTML += data[e]; elem.classList.remove("d-none");
+            elem.innerHTML = data[e]; elem.classList.remove("d-none");
         });
     })
     .finally(() => {
