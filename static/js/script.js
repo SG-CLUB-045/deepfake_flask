@@ -6,7 +6,9 @@ const closeAll = () => {
 
     setTimeout(() => {
         fileName.textContent = '';
-        display.classList.remove("display-show");
+
+        displays.forEach(e => e.classList.remove("display-show"));
+        
         actionBtn.innerHTML = "Select";
         actionBtn.htmlFor = "video";
     }, 200);
@@ -16,12 +18,17 @@ const changeAction = () => {
     if (vid.files.length > 0) {
         const file = vid.files[0];
 
-        display.src = URL.createObjectURL(file);
-        display.classList.add("display-show")
-        display.load(); display.play();
-
+        if (file.name.endsWith("mp4")) {
+            displays[0].src = URL.createObjectURL(file);
+            displays[0].classList.add("display-show");
+            displays[0].load(); displays[0].play();
+        } else {
+            displays[1].src = URL.createObjectURL(file);
+            displays[1].classList.add("display-show");
+        }
+        
         fileName.textContent = `File Name: ${file.name}`;
-
+        
         actionBtn.innerHTML = "Check for DeepFake";
         actionBtn.htmlFor = '';
         actionBtn.onclick = () => testForFile(file); 
@@ -52,7 +59,7 @@ const testForFile = file => {
 const covers = Array.from(document.getElementsByClassName("cover"));
 
 const vid = document.getElementById("video");
-const display = document.getElementById("display");
+const displays = Array.from(document.getElementsByClassName("display"));
 
 const fileName = document.getElementById("fileName");
 const actionBtn = document.getElementById("action-btn");
