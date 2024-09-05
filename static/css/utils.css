@@ -45,6 +45,10 @@ button {
     display: grid;
 }
 
+.d-none {
+    display: none;
+}
+
 .h-full {
     height: 100%;
 }

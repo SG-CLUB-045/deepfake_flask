@@ -93,7 +93,6 @@ header {
 }
 
 .cover {
-
     transition: .2s ease-in-out;
 }
 
@@ -102,7 +101,7 @@ header {
     pointer-events: none;
 }
 
-#bg-cover {
+.bg-cover {
     top: 0;
     left: 0;
 
@@ -135,10 +134,6 @@ header {
     text-align: center;
 }
 
-#video {
-    display: none;
-}
-
 #display {
     width: 420px;
 }
@@ -149,4 +144,29 @@ header {
 
 #action-btn {
     cursor: pointer;
+}
+
+#loader-holder {
+    z-index: 20;
+}
+
+
+#loader {
+    width: 80px;
+    aspect-ratio: 1;
+    color: #8d7958;
+    background:
+        radial-gradient(150% 150% at left -40% top -40%, #0000 98%, currentColor) left top,
+        radial-gradient(150% 150% at right -40% top -40%, #0000 98%, currentColor) right top,
+        radial-gradient(150% 150% at left -40% bottom -40%, #0000 98%, currentColor) left bottom,
+        radial-gradient(150% 150% at right -40% bottom -40%, #0000 98%, currentColor) right bottom;
+    background-size: 50.3% 50.3%;
+    background-repeat: no-repeat;
+    animation: rotate 1.5s infinite linear;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1turn)
+    }
 }

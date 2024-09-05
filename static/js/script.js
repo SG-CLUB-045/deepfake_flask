@@ -21,20 +21,27 @@ const changeAction = () => {
         fileName.textContent = `File Name: ${file.name}`;
 
         actionBtn.innerHTML = "Check for DeepFake";
-        actionBtn.onclick = testForFile(file); actionBtn.htmlFor = '';
+        actionBtn.htmlFor = '';
+        actionBtn.onclick = () => testForFile(file); 
     }
 }
 
 const testForFile = file => {
     const data = new FormData(); data.append("video", file);
+    const loader = document.getElementById("loader-holder");
+
+    loader.classList.remove("hidden");
     
     let result = fetch('/api', {
         method: 'POST', body: data
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
+        
     })
+    .finally(() => {
+        loader.classList.add("hidden");
+    });
 }
 
 const covers = Array.from(document.getElementsByClassName("cover"));

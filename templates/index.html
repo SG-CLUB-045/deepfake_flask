@@ -45,7 +45,7 @@
         <section class="h-full" id="right"></section>
     </section>
 
-    <section class="p-fixed cover hidden" id="bg-cover" onclick="closeAll()"></section>
+    <section class="p-fixed cover hidden bg-cover" onclick="closeAll()"></section>
 
     <section class="p-fixed d-flex jc-center cover hidden pop-up" id="pop-up">
         <div class="d-grid" id="pop-up-container">
@@ -53,7 +53,7 @@
 
             <video id="display" height="0"></video>
             
-            <input type="file" id="video" name="video" accept="video/*, image/*" onchange="changeAction()">
+            <input type="file" class="d-none" id="video" name="video" accept="video/*, image/*" onchange="changeAction()">
             <p id="fileName"></p>
             
             <div class="btn-box">
@@ -64,6 +64,9 @@
     
     <section class="p-fixed cover hidden pop-up text-container" id="about-us"></section>
 
+    <section class="p-fixed d-flex jc-center cover hidden bg-cover" id="loader-holder">
+        <div id="loader"></div>
+    </section>
 
     <!-- <script src="url_for('static', filename='./js/script.js')"></script> -->
     <script src="../static/js/script.js"></script>
