@@ -15,6 +15,8 @@ const closeAll = () => {
         
         actionBtn.innerHTML = "Select";
         actionBtn.htmlFor = "video";
+
+        anotherBtn.classList.add("d-none");
     }, 200);
 }
 
@@ -52,8 +54,14 @@ const testForFile = file => {
     .then(data => {
         ["output", "confidence"].forEach(e => {
             const elem = document.getElementById(e);
-            elem.innerHTML = data[e]; elem.classList.remove("d-none");
+            
+            elem.querySelector("label").innerHTML = data[e]; 
+            elem.classList.remove("d-none");
         });
+
+        actionBtn.innerHTML = "Generate Report";
+        
+        anotherBtn.classList.remove("d-none");
     })
     .finally(() => {
         loader.classList.add("hidden");
@@ -67,3 +75,5 @@ const displays = Array.from(document.getElementsByClassName("display"));
 
 const fileName = document.getElementById("fileName");
 const actionBtn = document.getElementById("action-btn");
+
+const anotherBtn = document.getElementById("another-btn");
