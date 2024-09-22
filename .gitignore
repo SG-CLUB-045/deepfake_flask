@@ -1,4 +1,5 @@
 venv/
+env/
 uploads/
 model/
 Uploaded_Files/
